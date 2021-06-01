@@ -1,0 +1,28 @@
+//slim simulation script, creates three subpopualtions with failry high migration. Timing of admixture (line22) was varied in the study (from 200k th to 130k th generation)
+
+initialize() {
+
+  initializeMutationRate(1e-8);
+  initializeMutationType("m1", 0.5, "f", 0);
+	initializeMutationType("m2", 0.5, "f", -0.001);
+	m1.convertToSubstitution = T;
+ 	initializeGenomicElementType("g1", c(m1,m2) , c(0.01, 0.99) ); 
+	initializeGenomicElement(g1, 0, 1000000);
+	initializeRecombinationRate(1e-8);
+
+}
+
+1 {sim.addSubpop("p1", 100000);
+  sim.addSubpop("p2", 100000);
+  sim.addSubpop("p5", 100000);
+}
+
+200000{ 
+p1.setMigrationRates(p2, 0.000001);
+p2.setMigrationRates(p1, 0.000001);
+p1.setMigrationRates(p5, 0.000001);
+p5.setMigrationRates(p1, 0.000001);
+}
+
+//samples 100 individuals from focal population (p1) and writes to vcf
+1500000 late() { p1.outputVCFSample(100,F,'*',F,"slim_subpop_ad200k_rep1.vcf");}
