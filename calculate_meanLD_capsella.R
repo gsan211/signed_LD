@@ -4,8 +4,8 @@ library(magrittr)
 library(windowscanr)
 library(dplyr)
 
-#read in file with site information and genotypes of individuals
-multi2 = fread("/plas1/george.sandler/capsella/fly_retry/pop88_SYN_gts.txt")
+#read in file with site information and genotypes of individuals e.g.
+multi2 = fread(../pop88_SYN_gts.txt)
 
 #count number of individuals with no genotypes info, remove all sites whith missing info
 multi2$count <- rowSums(multi2 == "./.")
