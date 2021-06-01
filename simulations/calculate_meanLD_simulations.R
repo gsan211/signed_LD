@@ -66,7 +66,7 @@ analyze  <- function(line_filename){
   df3s = rbind(norms,chans)
   df3s$sum = NULL
   df3s$sum = rowSums(df3s)
-  #df3s = df3s[df3s$sum < 6 ,]
+  df3s = df3s[df3s$sum < 6 ,] #allele coutn cutoff like in the real data, again can be ignored to explore alternative ways of calculating LD
   df3s$sum = NULL
   
   #calculate LD
@@ -84,10 +84,8 @@ analyze  <- function(line_filename){
 
   
   dfn$sum = rowSums(dfn)
-  #normn = dfn[dfn$sum < 100,]
-  #chann = dfn[dfn$sum > 99,]
-  normn = dfn[dfn$sum < 500,]
-  chann = dfn[dfn$sum > 599,]
+  normn = dfn[dfn$sum < 100,]
+  chann = dfn[dfn$sum > 99,]
   chann <- lapply(chann, gsub, pattern = "0", replacement = "zero", fixed = TRUE)
   chann <- lapply(chann, gsub, pattern = "2", replacement = "two", fixed = TRUE)
   chann <- lapply(chann, gsub, pattern = "zero", replacement = "2", fixed = TRUE)
@@ -98,7 +96,7 @@ analyze  <- function(line_filename){
   df3n = rbind(normn,chann)
   df3n$sum = NULL
   df3n$sum = rowSums(df3n)
-  #df3n = df3n[df3n$sum < 6,]
+  df3n = df3n[df3n$sum < 6,]
   df3n$sum = NULL
   
   mat_n <- data.matrix(df3n)  
