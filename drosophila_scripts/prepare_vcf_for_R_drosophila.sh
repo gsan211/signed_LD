@@ -1,4 +1,4 @@
-bcftoolsg=/plas1/george.sandler/apps/bcftools-1.10.2/bin/bcftools
+bcftoolsg=../bcftools-1.10.2/bin/bcftools
 
 #pull sites of interest from drosophila VCF and write to .txt file as a table
 #then input table intro "drosophila_edit_genotypes.sh" script to fix the genotypes
