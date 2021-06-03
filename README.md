@@ -16,7 +16,7 @@ These site list files are tab delimited and can be used with BCFtools to parse o
 ## capsella_scripts
 Scripts for calculating LD in Capsella dataset
 
-outlier_samples.txt 
+<ins>outlier_samples.txt </ins>
 
 File contains the individuals removed from the VCF for LD analyses 
 
