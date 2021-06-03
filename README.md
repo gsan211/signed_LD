@@ -13,7 +13,7 @@ The SNPeff annotations were parsed with grep to obtain the sites of interest. Ha
 
 These site list files are tab delimited and can be given to BCFtools to parse out the sites of interest from the VCFs.
 
-##capsella_scripts
+## capsella_scripts
 Scripts for calculating LD in Capsella dataset
 
 the outlier_samples.txt 
