@@ -1,0 +1,7 @@
+#samples NOT used in the LD analyses
+143s_clipped
+149
+165_clipped.bam
+27
+64_replacement
+7s_clipped
