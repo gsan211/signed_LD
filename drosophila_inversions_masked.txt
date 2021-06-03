@@ -1,0 +1,8 @@
+#regions masked in some analyses because they harbour inversions in the dorosphila DPGP3 dataset
+#inversion name, chromosome, start, end
+In(1)A	X	13519769	19473361
+In(2L)t	2L	2225744	13154180
+In(2R)NS	2R	11278659	16163839
+In(3R)K	3R	7576289	21966092
+In(3L)Ok	3L	2408642	11055047
+
