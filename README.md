@@ -55,6 +55,14 @@ network IDs and genes included in them for both species. See supplementary table
 Network LD was calculated just like in the calculate_meanLD_capsella.R/calculate_meanLD_drosophila.R
  scripts (in 100Kb windows)
 
+## other scripts included
+
+plink_script.sh
+script for generating distribution of LD values using PLINK. Takes as input VCF of sites of interest (can use prepare_vcf_for_R_drosophila.sh script to generate these VCFs)
+
+LD_permutation_test.R / LD_permutation_test_100Kb_windows.R
+Permutation test for testing mean LD (SNP by SNP or in 100Kb windows) against 0.
+Takes as input output of drosophila_edit_genotypes.sh script (not vcf but the actual table), shuffles genotypes around and generates null distribution of LD. Formatted for Capsella dataset.
 
 
 
